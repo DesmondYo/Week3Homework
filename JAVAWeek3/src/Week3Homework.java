@@ -1,4 +1,8 @@
+import java.io.ObjectInputStream.GetField;
+
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 public class Week3Homework {
 
@@ -22,7 +26,7 @@ public class Week3Homework {
 			System.out.println("The average is: " + average);
 			
 		//2. 
-			String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
+			String[] names = {"Sam", "Tommy", "Tim", "Sally", "Jr", "Billy"};
 			
 		//2A. 
 			int total2 = 0;
@@ -97,6 +101,18 @@ public class Week3Homework {
 			
 			System.out.println(isFirstArrayAverageGreaterThanSecondArrayAverage(tempeatureOfWeather, gasPrices));
 			
+		//12.
+			boolean willBuyDrink = false;
+			boolean isHotOutside = false;
+			double moneyInPocket = 15.83;
+			
+			System.out.println("Will I buy a drink today?: " + willBuyDrink(isHotOutside, moneyInPocket));
+			
+		//13. 
+			boolean isItRaining = false;
+			double gallonsOfGas = 16; 
+			
+			System.out.println("Will I drive today?: " + willIDriveToday(isItRaining, gallonsOfGas));
 			
 		}
 		
@@ -138,44 +154,28 @@ public class Week3Homework {
 				return sum / numbers.length;
 			}
 			
-		//11.Method
+		//11. Method
 			public static boolean isFirstArrayAverageGreaterThanSecondArrayAverage(double[] firstArray, double[] secondArray) {
-//				double firstArrayAverage = 0;
-//				double secondArrayAverage = 0;
-//							
-//				for (double number : firstArray) {
-//					firstArrayAverage += number;
-//					
-//				}
-//				firstArrayAverage = firstArrayAverage / firstArray.length;
-//				
-//				for (double number : secondArray) {
-//					secondArrayAverage += number;
-//				}
-//				secondArrayAverage = secondArrayAverage / secondArray.length;
-//				
-//				if (firstArrayAverage > secondArrayAverage) {
-//					return true;
-//				} else { 
-//					return false;
-//				}
-				
-				if (findAverage(firstArray) < findAverage(secondArray) ) {
+				if (findAverage(firstArray) > findAverage(secondArray) ) {
 					return true; 
 				} else {
 					return false;
 				}
-				
+			}	
+		//12. Method
+			public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+				return !isHotOutside && moneyInPocket > 10.50;
 			}
+			
+		//13. Method
+			
+			// Created a simple boolean method and described I will drive today if it is not raining and 
+			// if I have enough gas in my tank. 
+			
+			public static boolean willIDriveToday(boolean isItRaining, double gallonsOfGas) {
+				return !isItRaining && gallonsOfGas > 8;
+			}
+			
+				
+			
 }
-		
-	
-
-
-
-
-
-
-
-
-
