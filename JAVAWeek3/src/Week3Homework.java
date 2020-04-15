@@ -1,3 +1,4 @@
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
 
 public class Week3Homework {
 
@@ -58,8 +59,117 @@ public class Week3Homework {
 			}
 			System.out.println(sum);
 			
+		//7.
+			System.out.println(multiplyString("Dez " , 3));
+			
+		//8.
+			String firstName = "Jay";
+			String lastName = "Young";
+			String fullName = createFullName(firstName, lastName);
+			
+			System.out.println(fullName);
+		
+		//9.
+			int[] numbers = new int[4];
+			int averagetempratureOutside = numbers.length;
+			
+			numbers[0] = 10;
+			numbers[1] = 20;
+			numbers[2] = 70;
+			numbers[3] = 100;
+			
+			System.out.println(greaterThan100(numbers));
+			
+		//10 & 11. 
+			double[] tempeatureOfWeather = new double[4];
+			tempeatureOfWeather[0] = 84.94;
+			tempeatureOfWeather[1] = 93.83;
+			tempeatureOfWeather[2] = 84.93;
+			tempeatureOfWeather[3] = 20.94;
+			
+			double[] gasPrices = new double[4];
+			gasPrices[0] = 3.39;
+			gasPrices[1] = 1.84;
+			gasPrices[2] = 2.93;
+			gasPrices[3] = 1.86;
+			
+			System.out.println(findAverage(tempeatureOfWeather));
+			
+			System.out.println(isFirstArrayAverageGreaterThanSecondArrayAverage(tempeatureOfWeather, gasPrices));
+			
+			
 		}
-	}
+		
+		//7. Method
+			public static String multiplyString(String str, int num) {
+			String result = "";
+			for (int i = 0; i < num; i++) {
+				result += str;
+			}
+			return result;
+		}	
+		
+		//8. Method
+			public static String createFullName(String firstName, String lastName) {
+				return firstName + " " + lastName;
+		}
+			
+		//9. Method
+			public static boolean greaterThan100(int[] numbers) {
+				int sum = 0;
+				for (int i = 0; i < numbers.length; i++) {
+					sum += numbers[i];
+				}
+				
+				if (sum > 100) {
+					return true;
+				} else {
+					return false;
+				}
+				
+			}
+			
+		//10. Method
+			public static double findAverage(double[] numbers) {
+				double sum = 0;
+				for (double number : numbers) {
+					sum += number;
+				}
+				return sum / numbers.length;
+			}
+			
+		//11.Method
+			public static boolean isFirstArrayAverageGreaterThanSecondArrayAverage(double[] firstArray, double[] secondArray) {
+//				double firstArrayAverage = 0;
+//				double secondArrayAverage = 0;
+//							
+//				for (double number : firstArray) {
+//					firstArrayAverage += number;
+//					
+//				}
+//				firstArrayAverage = firstArrayAverage / firstArray.length;
+//				
+//				for (double number : secondArray) {
+//					secondArrayAverage += number;
+//				}
+//				secondArrayAverage = secondArrayAverage / secondArray.length;
+//				
+//				if (firstArrayAverage > secondArrayAverage) {
+//					return true;
+//				} else { 
+//					return false;
+//				}
+				
+				if (findAverage(firstArray) < findAverage(secondArray) ) {
+					return true; 
+				} else {
+					return false;
+				}
+				
+			}
+}
+		
+	
 
 
 
